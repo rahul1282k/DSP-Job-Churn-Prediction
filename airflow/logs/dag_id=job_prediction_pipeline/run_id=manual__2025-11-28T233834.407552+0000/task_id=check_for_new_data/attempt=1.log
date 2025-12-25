@@ -1,3 +1,0 @@
-[2025-11-28T23:38:33.933+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
-[2025-11-28T23:38:34.021+0000] {taskinstance.py:2066} INFO - Dependencies not met for <TaskInstance: job_prediction_pipeline.check_for_new_data manual__2025-11-28T23:38:34.407552+00:00 [queued]>, dependency 'Execution Date' FAILED: Execution date 2025-11-28T23:38:34.407552+00:00 is in the future (the current date is 2025-11-28T23:38:34.021560+00:00).
-[2025-11-28T23:38:34.028+0000] {local_task_job_runner.py:163} INFO - Task is not able to be run

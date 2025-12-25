@@ -1,9 +1,0 @@
-apache-airflow==2.9.3
-pandas
-numpy
-scikit-learn
-joblib
-psycopg2-binary
-SQLAlchemy
-great_expectations==0.17.21
-requests
