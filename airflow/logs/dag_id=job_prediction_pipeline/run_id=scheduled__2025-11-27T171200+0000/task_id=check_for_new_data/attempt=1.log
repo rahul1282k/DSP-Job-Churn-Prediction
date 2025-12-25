@@ -1,0 +1,17 @@
+[2025-11-27T17:14:01.141+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-27T17:14:01.172+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_prediction_pipeline.check_for_new_data scheduled__2025-11-27T17:12:00+00:00 [queued]>
+[2025-11-27T17:14:01.179+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_prediction_pipeline.check_for_new_data scheduled__2025-11-27T17:12:00+00:00 [queued]>
+[2025-11-27T17:14:01.180+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-11-27T17:14:01.194+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): check_for_new_data> on 2025-11-27 17:12:00+00:00
+[2025-11-27T17:14:01.202+0000] {standard_task_runner.py:64} INFO - Started process 1278 to run task
+[2025-11-27T17:14:01.206+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_prediction_pipeline', 'check_for_new_data', 'scheduled__2025-11-27T17:12:00+00:00', '--job-id', '45', '--raw', '--subdir', 'DAGS_FOLDER/dag_prediction.py', '--cfg-path', '/tmp/tmpxs5ckdnw']
+[2025-11-27T17:14:01.207+0000] {standard_task_runner.py:91} INFO - Job 45: Subtask check_for_new_data
+[2025-11-27T17:14:01.291+0000] {task_command.py:426} INFO - Running <TaskInstance: job_prediction_pipeline.check_for_new_data scheduled__2025-11-27T17:12:00+00:00 [running]> on host f5b1641b6106
+[2025-11-27T17:14:01.396+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='job_prediction_pipeline' AIRFLOW_CTX_TASK_ID='check_for_new_data' AIRFLOW_CTX_EXECUTION_DATE='2025-11-27T17:12:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-27T17:12:00+00:00'
+[2025-11-27T17:14:01.400+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-27T17:14:01.413+0000] {python.py:237} INFO - Done. Returned value was: ['job_part_0001.csv', 'job_part_0004.csv', 'job_part_0006.csv', 'job_part_0008.csv', 'job_part_0014.csv', 'job_part_0019.csv', 'job_part_0020.csv']
+[2025-11-27T17:14:01.413+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-27T17:14:01.441+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=job_prediction_pipeline, task_id=check_for_new_data, run_id=scheduled__2025-11-27T17:12:00+00:00, execution_date=20251127T171200, start_date=20251127T171401, end_date=20251127T171401
+[2025-11-27T17:14:01.473+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-11-27T17:14:01.495+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-11-27T17:14:01.500+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

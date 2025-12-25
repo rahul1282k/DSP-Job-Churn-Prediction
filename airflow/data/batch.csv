@@ -1,0 +1,6 @@
+﻿"enrollee_id,city,city_development_index,gender,relevent_experience,enrolled_university,education_level,major_discipline,experience,company_size,company_type,last_new_job,training_hours"
+"8949,city_103,0.92,Male,Has relevent experience,no_enrollment,Graduate,STEM,>20,50-99,Pvt Ltd,1,36"
+"29725,city_40,0.76,Male,No relevent experience,no_enrollment,Graduate,STEM,3,1000-4999,Public Sector,2,47"
+"11561,city_21,0.62,Female,No relevent experience,Part time course,High School,Arts,1,<10,Early Stage Startup,never,23"
+"33241,city_115,0.78,Male,Has relevent experience,no_enrollment,Masters,STEM,14,100-500,Pvt Ltd,1,64"
+"666,city_162,0.76,Male,Has relevent experience,no_enrollment,Graduate,STEM,5,50-99,Pvt Ltd,1,52"

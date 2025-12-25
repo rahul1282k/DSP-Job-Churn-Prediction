@@ -1,0 +1,73 @@
+[2025-11-14T15:32:05.571+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-14T15:32:05.662+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_prediction_pipeline.make_predictions scheduled__2025-11-14T15:30:00+00:00 [queued]>
+[2025-11-14T15:32:05.683+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_prediction_pipeline.make_predictions scheduled__2025-11-14T15:30:00+00:00 [queued]>
+[2025-11-14T15:32:05.685+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-11-14T15:32:05.709+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): make_predictions> on 2025-11-14 15:30:00+00:00
+[2025-11-14T15:32:05.733+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_prediction_pipeline', 'make_predictions', 'scheduled__2025-11-14T15:30:00+00:00', '--job-id', '28', '--raw', '--subdir', 'DAGS_FOLDER/dag_prediction.py', '--cfg-path', '/tmp/tmpafn5kbm5']
+[2025-11-14T15:32:05.741+0000] {standard_task_runner.py:91} INFO - Job 28: Subtask make_predictions
+[2025-11-14T15:32:05.741+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=272) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-14T15:32:05.743+0000] {standard_task_runner.py:64} INFO - Started process 276 to run task
+[2025-11-14T15:32:05.894+0000] {task_command.py:426} INFO - Running <TaskInstance: job_prediction_pipeline.make_predictions scheduled__2025-11-14T15:30:00+00:00 [running]> on host 01f98b13abaa
+[2025-11-14T15:32:06.437+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='job_prediction_pipeline' AIRFLOW_CTX_TASK_ID='make_predictions' AIRFLOW_CTX_EXECUTION_DATE='2025-11-14T15:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-14T15:30:00+00:00'
+[2025-11-14T15:32:06.439+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-14T15:32:06.470+0000] {logging_mixin.py:188} INFO - Processing file: job_missingcol_city.csv
+[2025-11-14T15:32:06.559+0000] {logging_mixin.py:188} INFO - Sending batch 0-500 (size=500) to API...
+[2025-11-14T15:32:06.564+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-14T15:32:06.565+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/models.py", line 510, in prepare_body
+    body = complexjson.dumps(json, allow_nan=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+ValueError: Out of range float values are not JSON compliant: nan
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_prediction.py", line 77, in make_predictions
+    r = requests.post(
+        ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/sessions.py", line 484, in prepare_request
+    p.prepare(
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/models.py", line 370, in prepare
+    self.prepare_body(data, files, json)
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/models.py", line 512, in prepare_body
+    raise InvalidJSONError(ve, request=self)
+requests.exceptions.InvalidJSONError: Out of range float values are not JSON compliant: nan
+[2025-11-14T15:32:06.599+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=job_prediction_pipeline, task_id=make_predictions, run_id=scheduled__2025-11-14T15:30:00+00:00, execution_date=20251114T153000, start_date=20251114T153205, end_date=20251114T153206
+[2025-11-14T15:32:06.620+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 28 for task make_predictions (Out of range float values are not JSON compliant: nan; 276)
+[2025-11-14T15:32:06.683+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2025-11-14T15:32:06.722+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-14T15:32:06.728+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

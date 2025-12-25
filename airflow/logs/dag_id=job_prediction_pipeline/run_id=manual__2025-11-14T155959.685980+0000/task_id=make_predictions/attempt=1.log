@@ -1,0 +1,110 @@
+[2025-11-14T16:00:05.174+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-14T16:00:05.261+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_prediction_pipeline.make_predictions manual__2025-11-14T15:59:59.685980+00:00 [queued]>
+[2025-11-14T16:00:05.283+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_prediction_pipeline.make_predictions manual__2025-11-14T15:59:59.685980+00:00 [queued]>
+[2025-11-14T16:00:05.285+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-11-14T16:00:05.314+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): make_predictions> on 2025-11-14 15:59:59.685980+00:00
+[2025-11-14T16:00:05.338+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_prediction_pipeline', 'make_predictions', 'manual__2025-11-14T15:59:59.685980+00:00', '--job-id', '111', '--raw', '--subdir', 'DAGS_FOLDER/dag_prediction.py', '--cfg-path', '/tmp/tmp5dtofam_']
+[2025-11-14T16:00:05.345+0000] {standard_task_runner.py:91} INFO - Job 111: Subtask make_predictions
+[2025-11-14T16:00:05.349+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=320) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-14T16:00:05.352+0000] {standard_task_runner.py:64} INFO - Started process 324 to run task
+[2025-11-14T16:00:05.507+0000] {task_command.py:426} INFO - Running <TaskInstance: job_prediction_pipeline.make_predictions manual__2025-11-14T15:59:59.685980+00:00 [running]> on host 01f98b13abaa
+[2025-11-14T16:00:06.110+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='job_prediction_pipeline' AIRFLOW_CTX_TASK_ID='make_predictions' AIRFLOW_CTX_EXECUTION_DATE='2025-11-14T15:59:59.685980+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-14T15:59:59.685980+00:00'
+[2025-11-14T16:00:06.113+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-14T16:00:06.145+0000] {logging_mixin.py:188} INFO - Processing file: job_missingcol_city.csv
+[2025-11-14T16:00:06.266+0000] {logging_mixin.py:188} INFO - Sending batch 0-500 (size=500) to API...
+[2025-11-14T16:00:13.311+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:00:13.312+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.04},{"prediction":0,"probability":0.415},{"prediction":0,"probability":0.02},{"prediction":0,"probability":0.075},{"prediction":0,"probability":0.295},{"prediction":0,"probability":0.285},{"prediction":0,"probability":0.035},{"prediction":0,"probabilit
+[2025-11-14T16:00:13.323+0000] {logging_mixin.py:188} INFO - Sending batch 500-1000 (size=500) to API...
+[2025-11-14T16:00:18.392+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:00:18.394+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.085},{"prediction":0,"probability":0.035},{"prediction":0,"probability":0.385},{"prediction":0,"probability":0.065},{"prediction":0,"probability":0.075},{"prediction":0,"probability":0.11},{"prediction":0,"probability":0.025},{"prediction":0,"probabili
+[2025-11-14T16:00:18.402+0000] {logging_mixin.py:188} INFO - Sending batch 1000-1500 (size=500) to API...
+[2025-11-14T16:00:24.907+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:00:24.908+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.07},{"prediction":0,"probability":0.065},{"prediction":0,"probability":0.155},{"prediction":0,"probability":0.45},{"prediction":0,"probability":0.225},{"prediction":0,"probability":0.19},{"prediction":0,"probability":0.025},{"prediction":0,"probability
+[2025-11-14T16:00:24.917+0000] {logging_mixin.py:188} INFO - Sending batch 1500-2000 (size=500) to API...
+[2025-11-14T16:00:29.733+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:00:29.734+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.09},{"prediction":0,"probability":0.08},{"prediction":1,"probability":0.765},{"prediction":0,"probability":0.09},{"prediction":0,"probability":0.4483372009375073},{"prediction":0,"probability":0.01},{"prediction":0,"probability":0.235},{"prediction":0,
+[2025-11-14T16:00:29.743+0000] {logging_mixin.py:188} INFO - Sending batch 2000-2500 (size=500) to API...
+[2025-11-14T16:00:34.957+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:00:34.958+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":1,"probability":0.735},{"prediction":0,"probability":0.045},{"prediction":0,"probability":0.08},{"prediction":0,"probability":0.085},{"prediction":0,"probability":0.07},{"prediction":1,"probability":0.51},{"prediction":0,"probability":0.065},{"prediction":0,"probability
+[2025-11-14T16:00:34.967+0000] {logging_mixin.py:188} INFO - Sending batch 2500-3000 (size=500) to API...
+[2025-11-14T16:00:39.475+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:00:39.476+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.415},{"prediction":0,"probability":0.06},{"prediction":0,"probability":0.11},{"prediction":1,"probability":0.54},{"prediction":0,"probability":0.475},{"prediction":0,"probability":0.065},{"prediction":0,"probability":0.015},{"prediction":0,"probability
+[2025-11-14T16:00:39.484+0000] {logging_mixin.py:188} INFO - Sending batch 3000-3500 (size=500) to API...
+[2025-11-14T16:00:44.517+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:00:44.518+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":1,"probability":0.605},{"prediction":0,"probability":0.275},{"prediction":0,"probability":0.01},{"prediction":0,"probability":0.105},{"prediction":0,"probability":0.06},{"prediction":0,"probability":0.345},{"prediction":0,"probability":0.24},{"prediction":0,"probability
+[2025-11-14T16:00:44.527+0000] {logging_mixin.py:188} INFO - Sending batch 3500-4000 (size=500) to API...
+[2025-11-14T16:00:49.023+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:00:49.024+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.46428784400250456},{"prediction":0,"probability":0.43},{"prediction":0,"probability":0.04},{"prediction":0,"probability":0.05},{"prediction":0,"probability":0.06},{"prediction":0,"probability":0.055},{"prediction":0,"probability":0.055},{"prediction":0
+[2025-11-14T16:00:49.036+0000] {logging_mixin.py:188} INFO - Sending batch 4000-4500 (size=500) to API...
+[2025-11-14T16:00:55.299+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:00:55.300+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.03},{"prediction":0,"probability":0.065},{"prediction":0,"probability":0.145},{"prediction":0,"probability":0.21},{"prediction":0,"probability":0.125},{"prediction":0,"probability":0.09},{"prediction":0,"probability":0.16},{"prediction":0,"probability"
+[2025-11-14T16:00:55.313+0000] {logging_mixin.py:188} INFO - Sending batch 4500-5000 (size=500) to API...
+[2025-11-14T16:00:59.795+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:00:59.797+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.03},{"prediction":0,"probability":0.465},{"prediction":0,"probability":0.18},{"prediction":0,"probability":0.02},{"prediction":0,"probability":0.04},{"prediction":0,"probability":0.03},{"prediction":0,"probability":0.045},{"prediction":0,"probability":
+[2025-11-14T16:00:59.805+0000] {logging_mixin.py:188} INFO - Sending batch 5000-5500 (size=500) to API...
+[2025-11-14T16:01:05.019+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:01:05.020+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.495},{"prediction":0,"probability":0.09},{"prediction":0,"probability":0.205},{"prediction":0,"probability":0.07},{"prediction":0,"probability":0.005},{"prediction":0,"probability":0.315},{"prediction":0,"probability":0.08},{"prediction":0,"probability
+[2025-11-14T16:01:05.029+0000] {logging_mixin.py:188} INFO - Sending batch 5500-6000 (size=500) to API...
+[2025-11-14T16:01:10.896+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:01:10.898+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.275},{"prediction":0,"probability":0.06},{"prediction":0,"probability":0.11},{"prediction":0,"probability":0.04},{"prediction":0,"probability":0.045},{"prediction":0,"probability":0.285},{"prediction":0,"probability":0.22},{"prediction":0,"probability"
+[2025-11-14T16:01:10.916+0000] {logging_mixin.py:188} INFO - Sending batch 6000-6500 (size=500) to API...
+[2025-11-14T16:01:15.914+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:01:15.915+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.46},{"prediction":0,"probability":0.115},{"prediction":0,"probability":0.295},{"prediction":0,"probability":0.005},{"prediction":0,"probability":0.02},{"prediction":0,"probability":0.47},{"prediction":0,"probability":0.485},{"prediction":0,"probability
+[2025-11-14T16:01:15.926+0000] {logging_mixin.py:188} INFO - Sending batch 6500-7000 (size=500) to API...
+[2025-11-14T16:01:20.603+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:01:20.605+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.315},{"prediction":0,"probability":0.065},{"prediction":0,"probability":0.08},{"prediction":0,"probability":0.18},{"prediction":0,"probability":0.43},{"prediction":1,"probability":0.525},{"prediction":0,"probability":0.08},{"prediction":0,"probability"
+[2025-11-14T16:01:20.617+0000] {logging_mixin.py:188} INFO - Sending batch 7000-7500 (size=500) to API...
+[2025-11-14T16:01:26.460+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:01:26.461+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.11},{"prediction":1,"probability":0.5},{"prediction":0,"probability":0.085},{"prediction":0,"probability":0.255},{"prediction":0,"probability":0.295},{"prediction":0,"probability":0.0},{"prediction":0,"probability":0.295},{"prediction":0,"probability":
+[2025-11-14T16:01:26.472+0000] {logging_mixin.py:188} INFO - Sending batch 7500-8000 (size=500) to API...
+[2025-11-14T16:01:30.835+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:01:30.837+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.19},{"prediction":0,"probability":0.375},{"prediction":0,"probability":0.29},{"prediction":0,"probability":0.055},{"prediction":0,"probability":0.135},{"prediction":0,"probability":0.145},{"prediction":0,"probability":0.2230041779820347},{"prediction":
+[2025-11-14T16:01:30.852+0000] {logging_mixin.py:188} INFO - Sending batch 8000-8500 (size=500) to API...
+[2025-11-14T16:01:35.277+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:01:35.279+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.085},{"prediction":0,"probability":0.2},{"prediction":0,"probability":0.04},{"prediction":0,"probability":0.12},{"prediction":0,"probability":0.15},{"prediction":0,"probability":0.01},{"prediction":0,"probability":0.045},{"prediction":0,"probability":0
+[2025-11-14T16:01:35.288+0000] {logging_mixin.py:188} INFO - Sending batch 8500-9000 (size=500) to API...
+[2025-11-14T16:01:39.721+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:01:39.722+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.185},{"prediction":0,"probability":0.47},{"prediction":0,"probability":0.05},{"prediction":0,"probability":0.03},{"prediction":0,"probability":0.245},{"prediction":0,"probability":0.035},{"prediction":0,"probability":0.08},{"prediction":0,"probability"
+[2025-11-14T16:01:39.731+0000] {logging_mixin.py:188} INFO - Sending batch 9000-9500 (size=500) to API...
+[2025-11-14T16:01:45.097+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:01:45.098+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.445},{"prediction":0,"probability":0.05},{"prediction":0,"probability":0.035},{"prediction":0,"probability":0.105},{"prediction":0,"probability":0.43},{"prediction":0,"probability":0.09},{"prediction":0,"probability":0.17},{"prediction":0,"probability"
+[2025-11-14T16:01:45.109+0000] {logging_mixin.py:188} INFO - Sending batch 9500-10000 (size=500) to API...
+[2025-11-14T16:01:50.121+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:01:50.123+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.075},{"prediction":0,"probability":0.07},{"prediction":0,"probability":0.31},{"prediction":0,"probability":0.025},{"prediction":0,"probability":0.055},{"prediction":0,"probability":0.175},{"prediction":0,"probability":0.05},{"prediction":0,"probability
+[2025-11-14T16:01:50.136+0000] {logging_mixin.py:188} INFO - Sending batch 10000-10500 (size=500) to API...
+[2025-11-14T16:01:54.624+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:01:54.625+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.04},{"prediction":0,"probability":0.07},{"prediction":0,"probability":0.41},{"prediction":0,"probability":0.095},{"prediction":0,"probability":0.065},{"prediction":0,"probability":0.04300417798203467},{"prediction":0,"probability":0.055},{"prediction":
+[2025-11-14T16:01:54.636+0000] {logging_mixin.py:188} INFO - Sending batch 10500-11000 (size=500) to API...
+[2025-11-14T16:01:59.962+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:01:59.963+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.38},{"prediction":0,"probability":0.06},{"prediction":0,"probability":0.035},{"prediction":0,"probability":0.03},{"prediction":0,"probability":0.03},{"prediction":0,"probability":0.035},{"prediction":0,"probability":0.45},{"prediction":0,"probability":
+[2025-11-14T16:01:59.974+0000] {logging_mixin.py:188} INFO - Sending batch 11000-11500 (size=500) to API...
+[2025-11-14T16:02:04.769+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:02:04.770+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":1,"probability":0.645},{"prediction":0,"probability":0.015},{"prediction":0,"probability":0.29},{"prediction":0,"probability":0.055},{"prediction":0,"probability":0.01},{"prediction":0,"probability":0.145},{"prediction":0,"probability":0.025},{"prediction":0,"probabilit
+[2025-11-14T16:02:04.781+0000] {logging_mixin.py:188} INFO - Sending batch 11500-12000 (size=500) to API...
+[2025-11-14T16:02:10.595+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:02:10.614+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.065},{"prediction":0,"probability":0.1},{"prediction":0,"probability":0.255},{"prediction":0,"probability":0.045},{"prediction":0,"probability":0.025},{"prediction":0,"probability":0.185},{"prediction":0,"probability":0.11},{"prediction":0,"probability
+[2025-11-14T16:02:10.674+0000] {logging_mixin.py:188} INFO - Sending batch 12000-12500 (size=500) to API...
+[2025-11-14T16:02:16.505+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:02:16.506+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.02},{"prediction":0,"probability":0.265},{"prediction":0,"probability":0.145},{"prediction":0,"probability":0.03},{"prediction":0,"probability":0.17},{"prediction":0,"probability":0.17},{"prediction":0,"probability":0.05},{"prediction":0,"probability":
+[2025-11-14T16:02:16.520+0000] {logging_mixin.py:188} INFO - Sending batch 12500-13000 (size=500) to API...
+[2025-11-14T16:02:22.122+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:02:22.123+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.015},{"prediction":0,"probability":0.02},{"prediction":0,"probability":0.055},{"prediction":0,"probability":0.32},{"prediction":0,"probability":0.08},{"prediction":0,"probability":0.09},{"prediction":0,"probability":0.145},{"prediction":0,"probability"
+[2025-11-14T16:02:22.134+0000] {logging_mixin.py:188} INFO - Sending batch 13000-13500 (size=500) to API...
+[2025-11-14T16:02:28.522+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:02:28.524+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.03},{"prediction":0,"probability":0.04800417798203467},{"prediction":0,"probability":0.07},{"prediction":0,"probability":0.025},{"prediction":0,"probability":0.025},{"prediction":0,"probability":0.025},{"prediction":0,"probability":0.085},{"prediction"
+[2025-11-14T16:02:28.533+0000] {logging_mixin.py:188} INFO - Sending batch 13500-14000 (size=500) to API...
+[2025-11-14T16:02:34.314+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:02:34.315+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.095},{"prediction":0,"probability":0.035},{"prediction":0,"probability":0.12875326234471238},{"prediction":0,"probability":0.05},{"prediction":0,"probability":0.06},{"prediction":0,"probability":0.1},{"prediction":0,"probability":0.025},{"prediction":0
+[2025-11-14T16:02:34.326+0000] {logging_mixin.py:188} INFO - Sending batch 14000-14500 (size=500) to API...
+[2025-11-14T16:02:39.450+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:02:39.451+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":1,"probability":0.5},{"prediction":0,"probability":0.075},{"prediction":0,"probability":0.4},{"prediction":0,"probability":0.06},{"prediction":0,"probability":0.14},{"prediction":0,"probability":0.235},{"prediction":0,"probability":0.03},{"prediction":0,"probability":0.
+[2025-11-14T16:02:39.458+0000] {logging_mixin.py:188} INFO - Sending batch 14500-15000 (size=150) to API...
+[2025-11-14T16:02:44.226+0000] {logging_mixin.py:188} INFO - API status: 200
+[2025-11-14T16:02:44.227+0000] {logging_mixin.py:188} INFO - API response (first 300 chars): {"predictions":[{"prediction":0,"probability":0.025},{"prediction":0,"probability":0.015},{"prediction":0,"probability":0.045},{"prediction":0,"probability":0.19},{"prediction":0,"probability":0.04},{"prediction":0,"probability":0.395},{"prediction":1,"probability":0.605},{"prediction":0,"probabilit
+[2025-11-14T16:02:44.243+0000] {logging_mixin.py:188} INFO - Completed predictions for: job_missingcol_city.csv
+[2025-11-14T16:02:44.246+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-11-14T16:02:44.247+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-14T16:02:44.272+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=job_prediction_pipeline, task_id=make_predictions, run_id=manual__2025-11-14T15:59:59.685980+00:00, execution_date=20251114T155959, start_date=20251114T160005, end_date=20251114T160244
+[2025-11-14T16:02:44.370+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-11-14T16:02:44.408+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-14T16:02:44.414+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
