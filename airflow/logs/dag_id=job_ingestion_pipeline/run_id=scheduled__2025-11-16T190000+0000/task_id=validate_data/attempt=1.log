@@ -1,0 +1,229 @@
+[2025-11-16T19:01:05.457+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-16T19:01:05.538+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_ingestion_pipeline.validate_data scheduled__2025-11-16T19:00:00+00:00 [queued]>
+[2025-11-16T19:01:05.556+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_ingestion_pipeline.validate_data scheduled__2025-11-16T19:00:00+00:00 [queued]>
+[2025-11-16T19:01:05.557+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-11-16T19:01:05.586+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): validate_data> on 2025-11-16 19:00:00+00:00
+[2025-11-16T19:01:05.609+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_ingestion_pipeline', 'validate_data', 'scheduled__2025-11-16T19:00:00+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/dag_ingestion.py', '--cfg-path', '/tmp/tmp0naw6ct9']
+[2025-11-16T19:01:05.614+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=305) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-16T19:01:05.616+0000] {standard_task_runner.py:91} INFO - Job 13: Subtask validate_data
+[2025-11-16T19:01:05.617+0000] {standard_task_runner.py:64} INFO - Started process 307 to run task
+[2025-11-16T19:01:05.795+0000] {task_command.py:426} INFO - Running <TaskInstance: job_ingestion_pipeline.validate_data scheduled__2025-11-16T19:00:00+00:00 [running]> on host 947c163543eb
+[2025-11-16T19:01:06.547+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='job_ingestion_pipeline' AIRFLOW_CTX_TASK_ID='validate_data' AIRFLOW_CTX_EXECUTION_DATE='2025-11-16T19:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-16T19:00:00+00:00'
+[2025-11-16T19:01:06.550+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-16T19:01:06.552+0000] {logging_mixin.py:188} INFO - 🔍 Validating file: /opt/***/data/raw_data/job_part_010.csv
+[2025-11-16T19:01:06.812+0000] {_docs_decorators.py:115} INFO - Skipping registering function get_context because it does not have a class
+[2025-11-16T19:01:12.770+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/snowflake/sqlalchemy/base.py:1068: SAWarning: The GenericFunction 'flatten' is already registered and is going to be overridden.
+  functions.register_function("flatten", flatten)
+
+[2025-11-16T19:01:13.115+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.118+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.119+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.120+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.134+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.136+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.137+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.138+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.154+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.156+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.157+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.158+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.167+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.168+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.169+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.170+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.179+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.181+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.182+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.183+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.422+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.425+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.426+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.427+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.604+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.606+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.607+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.608+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.609+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.611+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.612+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.613+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.614+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.616+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.617+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.618+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.619+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.621+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.622+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.623+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.624+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.625+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.632+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.633+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.634+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.635+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.648+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.650+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.652+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.653+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.655+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.658+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.660+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.662+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.664+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.665+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.667+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.669+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.670+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.672+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.673+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.674+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.675+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.677+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.684+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.686+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.687+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.689+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.690+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.691+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.693+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.694+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.696+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.697+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.698+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.699+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.701+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.702+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.703+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.704+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.705+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.706+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.714+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.715+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.717+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.718+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.719+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.720+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.722+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.723+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.724+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.725+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.726+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.727+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.728+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.729+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:13.730+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.731+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.732+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.733+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.761+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.762+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.763+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.764+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.772+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.773+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.774+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.775+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.786+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.787+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.787+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.788+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.875+0000] {registry.py:290} INFO - Multiple declarations of metric table.column_types for engine PandasExecutionEngine.
+[2025-11-16T19:01:13.876+0000] {registry.py:290} INFO - Multiple declarations of metric table.column_types for engine SparkDFExecutionEngine.
+[2025-11-16T19:01:13.888+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.889+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.890+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.891+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.906+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.907+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.908+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:13.909+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.115+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.116+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.118+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.119+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.120+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.122+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.123+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.124+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.126+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.127+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.128+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.129+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.130+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.131+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.132+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.133+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.144+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.145+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.146+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.147+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.163+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.164+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.166+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.167+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.168+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.169+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.171+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.172+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.174+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.175+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.176+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.177+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.178+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.179+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.180+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.181+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.196+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.197+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.198+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.199+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.201+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.202+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.203+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.204+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.205+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.207+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.208+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.209+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.212+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.213+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.214+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.215+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.225+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.227+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.228+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.229+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.231+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.232+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.234+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.235+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.236+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.237+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.238+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.240+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[2025-11-16T19:01:14.241+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.242+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.243+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.244+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.247+0000] {registry.py:290} INFO - Multiple declarations of metric column.standard_deviation for engine PandasExecutionEngine.
+[2025-11-16T19:01:14.248+0000] {registry.py:290} INFO - Multiple declarations of metric column.standard_deviation.aggregate_fn for engine SparkDFExecutionEngine.
+[2025-11-16T19:01:14.249+0000] {registry.py:290} INFO - Multiple declarations of metric column.standard_deviation for engine SparkDFExecutionEngine.
+[2025-11-16T19:01:14.267+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.268+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.269+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.270+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.283+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.284+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.285+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.286+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.303+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.304+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.305+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.306+0000] {_docs_decorators.py:109} INFO - Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[2025-11-16T19:01:14.555+0000] {logging_mixin.py:188} INFO - ✅ Validation result: {'file_path': '/opt/***/data/raw_data/job_part_010.csv', 'errors': ['Missing column: age', 'Missing column: salary', 'Column gender has missing values', 'Column city has missing values', 'Column experience has missing values'], 'criticality': 'medium', 'valid': False}
+[2025-11-16T19:01:14.560+0000] {python.py:237} INFO - Done. Returned value was: {'file_path': '/opt/***/data/raw_data/job_part_010.csv', 'errors': ['Missing column: age', 'Missing column: salary', 'Column gender has missing values', 'Column city has missing values', 'Column experience has missing values'], 'criticality': 'medium', 'valid': False}
+[2025-11-16T19:01:14.562+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-16T19:01:14.756+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=job_ingestion_pipeline, task_id=validate_data, run_id=scheduled__2025-11-16T19:00:00+00:00, execution_date=20251116T190000, start_date=20251116T190105, end_date=20251116T190114
+[2025-11-16T19:01:14.913+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-11-16T19:01:14.958+0000] {taskinstance.py:3503} INFO - 3 downstream tasks scheduled from follow-on schedule check
+[2025-11-16T19:01:15.100+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

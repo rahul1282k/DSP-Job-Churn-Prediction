@@ -1,0 +1,17 @@
+[2025-11-29T08:10:06.637+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-29T08:10:06.712+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_ingestion_pipeline.read_data scheduled__2025-11-29T08:09:00+00:00 [queued]>
+[2025-11-29T08:10:06.732+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_ingestion_pipeline.read_data scheduled__2025-11-29T08:09:00+00:00 [queued]>
+[2025-11-29T08:10:06.750+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-11-29T08:10:06.783+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): read_data> on 2025-11-29 08:09:00+00:00
+[2025-11-29T08:10:06.816+0000] {standard_task_runner.py:64} INFO - Started process 12813 to run task
+[2025-11-29T08:10:06.827+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_ingestion_pipeline', 'read_data', 'scheduled__2025-11-29T08:09:00+00:00', '--job-id', '918', '--raw', '--subdir', 'DAGS_FOLDER/dag_ingestion.py', '--cfg-path', '/tmp/tmp041hpkay']
+[2025-11-29T08:10:06.830+0000] {standard_task_runner.py:91} INFO - Job 918: Subtask read_data
+[2025-11-29T08:10:07.022+0000] {task_command.py:426} INFO - Running <TaskInstance: job_ingestion_pipeline.read_data scheduled__2025-11-29T08:09:00+00:00 [running]> on host 9e1c9e9647a7
+[2025-11-29T08:10:07.510+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='job_ingestion_pipeline' AIRFLOW_CTX_TASK_ID='read_data' AIRFLOW_CTX_EXECUTION_DATE='2025-11-29T08:09:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-29T08:09:00+00:00'
+[2025-11-29T08:10:07.513+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-29T08:10:07.521+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-29T08:10:07.522+0000] {taskinstance.py:2506} INFO - No raw data available.
+[2025-11-29T08:10:07.559+0000] {taskinstance.py:1206} INFO - Marking task as SKIPPED. dag_id=job_ingestion_pipeline, task_id=read_data, run_id=scheduled__2025-11-29T08:09:00+00:00, execution_date=20251129T080900, start_date=20251129T081006, end_date=20251129T081007
+[2025-11-29T08:10:07.648+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-11-29T08:10:07.711+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-29T08:10:07.722+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

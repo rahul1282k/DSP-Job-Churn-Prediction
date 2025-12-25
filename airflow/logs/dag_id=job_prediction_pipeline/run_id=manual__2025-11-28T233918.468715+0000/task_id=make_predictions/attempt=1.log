@@ -1,0 +1,37 @@
+[2025-11-28T23:39:24.642+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-28T23:39:24.719+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_prediction_pipeline.make_predictions manual__2025-11-28T23:39:18.468715+00:00 [queued]>
+[2025-11-28T23:39:24.738+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_prediction_pipeline.make_predictions manual__2025-11-28T23:39:18.468715+00:00 [queued]>
+[2025-11-28T23:39:24.758+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-11-28T23:39:24.789+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): make_predictions> on 2025-11-28 23:39:18.468715+00:00
+[2025-11-28T23:39:24.810+0000] {standard_task_runner.py:64} INFO - Started process 341 to run task
+[2025-11-28T23:39:24.821+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_prediction_pipeline', 'make_predictions', 'manual__2025-11-28T23:39:18.468715+00:00', '--job-id', '360', '--raw', '--subdir', 'DAGS_FOLDER/dag_prediction.py', '--cfg-path', '/tmp/tmp2f8nk210']
+[2025-11-28T23:39:24.829+0000] {standard_task_runner.py:91} INFO - Job 360: Subtask make_predictions
+[2025-11-28T23:39:24.994+0000] {task_command.py:426} INFO - Running <TaskInstance: job_prediction_pipeline.make_predictions manual__2025-11-28T23:39:18.468715+00:00 [running]> on host 9e1c9e9647a7
+[2025-11-28T23:39:25.393+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='job_prediction_pipeline' AIRFLOW_CTX_TASK_ID='make_predictions' AIRFLOW_CTX_EXECUTION_DATE='2025-11-28T23:39:18.468715+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-28T23:39:18.468715+00:00'
+[2025-11-28T23:39:25.395+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-28T23:39:28.428+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0001_predicted.csv
+[2025-11-28T23:39:33.385+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0002_predicted.csv
+[2025-11-28T23:39:37.809+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0003_predicted.csv
+[2025-11-28T23:39:42.556+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0004_predicted.csv
+[2025-11-28T23:39:46.850+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0005_predicted.csv
+[2025-11-28T23:39:51.385+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0006_predicted.csv
+[2025-11-28T23:39:55.817+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0007_predicted.csv
+[2025-11-28T23:39:57.439+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0008_predicted.csv
+[2025-11-28T23:40:01.966+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0009_predicted.csv
+[2025-11-28T23:40:06.630+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0010_predicted.csv
+[2025-11-28T23:40:10.859+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0011_predicted.csv
+[2025-11-28T23:40:15.050+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0012_predicted.csv
+[2025-11-28T23:40:19.209+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0013_predicted.csv
+[2025-11-28T23:40:23.369+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0014_predicted.csv
+[2025-11-28T23:40:24.915+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0015_predicted.csv
+[2025-11-28T23:40:29.263+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0016_predicted.csv
+[2025-11-28T23:40:33.427+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0017_predicted.csv
+[2025-11-28T23:40:37.910+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0018_predicted.csv
+[2025-11-28T23:40:42.038+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0019_predicted.csv
+[2025-11-28T23:40:46.005+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0020_predicted.csv
+[2025-11-28T23:40:46.016+0000] {python.py:237} INFO - Done. Returned value was: [{'file': 'job_part_0001.csv', 'status': 'ok', 'output': 'job_part_0001_predicted.csv'}, {'file': 'job_part_0002.csv', 'status': 'ok', 'output': 'job_part_0002_predicted.csv'}, {'file': 'job_part_0003.csv', 'status': 'ok', 'output': 'job_part_0003_predicted.csv'}, {'file': 'job_part_0004.csv', 'status': 'ok', 'output': 'job_part_0004_predicted.csv'}, {'file': 'job_part_0005.csv', 'status': 'ok', 'output': 'job_part_0005_predicted.csv'}, {'file': 'job_part_0006.csv', 'status': 'ok', 'output': 'job_part_0006_predicted.csv'}, {'file': 'job_part_0007.csv', 'status': 'ok', 'output': 'job_part_0007_predicted.csv'}, {'file': 'job_part_0008.csv', 'status': 'ok', 'output': 'job_part_0008_predicted.csv'}, {'file': 'job_part_0009.csv', 'status': 'ok', 'output': 'job_part_0009_predicted.csv'}, {'file': 'job_part_0010.csv', 'status': 'ok', 'output': 'job_part_0010_predicted.csv'}, {'file': 'job_part_0011.csv', 'status': 'ok', 'output': 'job_part_0011_predicted.csv'}, {'file': 'job_part_0012.csv', 'status': 'ok', 'output': 'job_part_0012_predicted.csv'}, {'file': 'job_part_0013.csv', 'status': 'ok', 'output': 'job_part_0013_predicted.csv'}, {'file': 'job_part_0014.csv', 'status': 'ok', 'output': 'job_part_0014_predicted.csv'}, {'file': 'job_part_0015.csv', 'status': 'ok', 'output': 'job_part_0015_predicted.csv'}, {'file': 'job_part_0016.csv', 'status': 'ok', 'output': 'job_part_0016_predicted.csv'}, {'file': 'job_part_0017.csv', 'status': 'ok', 'output': 'job_part_0017_predicted.csv'}, {'file': 'job_part_0018.csv', 'status': 'ok', 'output': 'job_part_0018_predicted.csv'}, {'file': 'job_part_0019.csv', 'status': 'ok', 'output': 'job_part_0019_predicted.csv'}, {'file': 'job_part_0020.csv', 'status': 'ok', 'output': 'job_part_0020_predicted.csv'}]
+[2025-11-28T23:40:46.018+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-28T23:40:46.217+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=job_prediction_pipeline, task_id=make_predictions, run_id=manual__2025-11-28T23:39:18.468715+00:00, execution_date=20251128T233918, start_date=20251128T233924, end_date=20251128T234046
+[2025-11-28T23:40:46.272+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-11-28T23:40:46.313+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-28T23:40:46.319+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

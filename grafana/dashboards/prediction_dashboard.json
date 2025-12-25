@@ -1,0 +1,191 @@
+{
+  "id": null,
+  "uid": "prediction-dashboard",
+  "title": "Prediction Monitoring",
+  "schemaVersion": 36,
+  "version": 1,
+  "timezone": "browser",
+  "editable": true,
+  "panels": [
+    {
+      "id": 1,
+      "title": "Predictions per minute",
+      "type": "timeseries",
+      "datasource": "Postgres",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "color": { "mode": "palette-classic" },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "red", "value": 0 },
+              { "color": "green", "value": 1 }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": { "showLegend": false },
+        "tooltip": { "mode": "single" }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": "Postgres",
+          "format": "time_series",
+          "rawSql": "SELECT\n  date_trunc('minute', created_at) AS \"time\",\n  COUNT(*) AS predictions\nFROM predictions\nWHERE $__timeFilter(created_at)\nGROUP BY 1\nORDER BY 1;"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Predicted class distribution (last 30 min)",
+      "type": "barchart",
+      "datasource": "Postgres",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "color": { "mode": "palette-classic" }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": { "showLegend": true },
+        "tooltip": { "mode": "single" },
+        "orientation": "horizontal"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": "Postgres",
+          "format": "table",
+          "rawSql": "SELECT\n  prediction->>'prediction' AS class,\n  COUNT(*) AS count\nFROM predictions\nWHERE created_at >= NOW() - INTERVAL '30 minutes'\nGROUP BY class\nORDER BY class;"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Prediction probability over time",
+      "type": "timeseries",
+      "datasource": "Postgres",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percentunit",
+          "color": { "mode": "palette-classic" },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "red", "value": 0.0 },
+              { "color": "yellow", "value": 0.2 },
+              { "color": "green", "value": 0.5 }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": { "showLegend": false },
+        "tooltip": { "mode": "single" }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": "Postgres",
+          "format": "time_series",
+          "rawSql": "SELECT\n  created_at AS \"time\",\n  (prediction->>'probability')::float AS probability\nFROM predictions\nWHERE $__timeFilter(created_at)\nORDER BY created_at;"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Avg training_hours (serving data)",
+      "type": "timeseries",
+      "datasource": "Postgres",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "color": { "mode": "palette-classic" }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": { "showLegend": false },
+        "tooltip": { "mode": "single" }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": "Postgres",
+          "format": "time_series",
+          "rawSql": "SELECT\n  date_trunc('minute', created_at) AS \"time\",\n  AVG((features->>'training_hours')::float) AS avg_training_hours\nFROM predictions\nWHERE $__timeFilter(created_at)\nGROUP BY 1\nORDER BY 1;"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Avg city_development_index (serving data)",
+      "type": "timeseries",
+      "datasource": "Postgres",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 16 },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "color": { "mode": "palette-classic" }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": { "showLegend": false },
+        "tooltip": { "mode": "single" }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": "Postgres",
+          "format": "time_series",
+          "rawSql": "SELECT\n  date_trunc('minute', created_at) AS \"time\",\n  AVG((features->>'city_development_index')::float) AS avg_cdi\nFROM predictions\nWHERE $__timeFilter(created_at)\nGROUP BY 1\nORDER BY 1;"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Prediction source breakdown (webapp vs scheduled)",
+      "type": "timeseries",
+      "datasource": "Postgres",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 16 },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "color": { "mode": "palette-classic" }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": { "showLegend": true },
+        "tooltip": { "mode": "single" },
+        "stacking": { "mode": "normal", "group": "src" }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": "Postgres",
+          "format": "time_series",
+          "rawSql": "SELECT\n  date_trunc('minute', created_at) AS \"time\",\n  SUM(CASE WHEN source = 'webapp' THEN 1 ELSE 0 END) AS webapp,\n  SUM(CASE WHEN source = 'scheduled' THEN 1 ELSE 0 END) AS scheduled\nFROM predictions\nWHERE $__timeFilter(created_at)\nGROUP BY 1\nORDER BY 1;"
+        }
+      ]
+    }
+  ],
+  "time": {
+    "from": "now-2h",
+    "to": "now"
+  },
+  "templating": {
+    "list": []
+  }
+}

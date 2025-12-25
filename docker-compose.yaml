@@ -1,0 +1,116 @@
+services:
+
+  postgres:
+    image: postgres:15
+    container_name: job-churn-prediction-postgres-1
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - job_net
+
+  airflow:
+    build: ./airflow
+    container_name: job-churn-prediction-airflow-1
+    env_file:
+      - .env
+    environment:
+      AIRFLOW_UID: "0"
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__CORE__FERNET_KEY: "${FERNET_KEY}"
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
+      AIRFLOW__CORE__LOAD_DEFAULT_CONNECTIONS: "False"
+      API_URL: "${API_URL}"
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
+    entrypoint: ["/entrypoint.sh"]
+    volumes:
+      - ./airflow:/opt/airflow
+    networks:
+      - job_net
+
+  api:
+    build: ./api
+    image: local/job-churn-prediction-api:latest
+    container_name: job-churn-prediction-api-1
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
+    networks:
+      - job_net
+    volumes:
+      - ./api:/app
+      - ./airflow/data:/app/data
+
+  webapp:
+    build: ./webapp
+    image: local/job-churn-prediction-webapp:latest
+    container_name: job-churn-prediction-webapp-1
+    ports:
+      - "8501:8501"
+    environment:
+      API_URL: "${API_URL}"
+    networks:
+      - job_net
+    volumes:
+      - ./webapp:/app
+      - ./airflow/data:/app/data
+
+  grafana:
+    image: grafana/grafana:10.0.3
+    container_name: job-churn-prediction-grafana-1
+    ports:
+      - "3000:3000"
+    networks:
+      - job_net
+    depends_on:
+      - postgres
+    environment:
+      - GF_SECURITY_ALLOW_EMBEDDING=true
+      - GF_INSTALL_PLUGINS=grafana-piechart-panel
+    volumes:
+      - ./grafana:/var/lib/grafana
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - ./grafana/dashboards:/etc/grafana/dashboards
+
+  dataset_splitter:
+    build:
+      context: ./scripts
+      dockerfile: Dockerfile.splitter
+    container_name: job-churn-prediction-splitter
+    depends_on:
+      - airflow
+    volumes:
+      - ./airflow/data:/opt/airflow/data
+    command: >
+      bash -c "
+      echo 'Waiting for Airflow folders...' &&
+      sleep 7 &&
+      if [ -z \"$(ls -A /opt/airflow/data/raw_data 2>/dev/null)\" ]; then
+        echo 'No raw data found — splitting dataset now.' &&
+        python /opt/scripts/split_dataset.py --dataset-path /opt/airflow/data/job.csv --raw-data-dir /opt/airflow/data/raw_data --n-files 20;
+      else
+        echo 'Raw data already exists — skipping split.';
+      fi
+      "
+    restart: "always"
+    networks:
+      - job_net
+
+
+volumes:
+  postgres_data:
+
+networks:
+  job_net:
+    driver: bridge

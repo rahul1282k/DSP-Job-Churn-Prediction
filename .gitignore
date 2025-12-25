@@ -1,0 +1,6 @@
+.env
+db_data/
+.ipynb_checkpoints/
+__pycache__/
+airflow/data/artifacts/
+*.joblib

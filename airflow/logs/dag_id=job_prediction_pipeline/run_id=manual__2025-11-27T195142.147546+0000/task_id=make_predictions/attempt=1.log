@@ -1,0 +1,31 @@
+[2025-11-27T19:51:44.766+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-27T19:51:44.806+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_prediction_pipeline.make_predictions manual__2025-11-27T19:51:42.147546+00:00 [queued]>
+[2025-11-27T19:51:44.813+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_prediction_pipeline.make_predictions manual__2025-11-27T19:51:42.147546+00:00 [queued]>
+[2025-11-27T19:51:44.814+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-11-27T19:51:44.831+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): make_predictions> on 2025-11-27 19:51:42.147546+00:00
+[2025-11-27T19:51:44.840+0000] {standard_task_runner.py:64} INFO - Started process 459 to run task
+[2025-11-27T19:51:44.845+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_prediction_pipeline', 'make_predictions', 'manual__2025-11-27T19:51:42.147546+00:00', '--job-id', '40', '--raw', '--subdir', 'DAGS_FOLDER/dag_prediction.py', '--cfg-path', '/tmp/tmpp69ruhun']
+[2025-11-27T19:51:44.847+0000] {standard_task_runner.py:91} INFO - Job 40: Subtask make_predictions
+[2025-11-27T19:51:45.044+0000] {task_command.py:426} INFO - Running <TaskInstance: job_prediction_pipeline.make_predictions manual__2025-11-27T19:51:42.147546+00:00 [running]> on host e0996db533ea
+[2025-11-27T19:51:45.379+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='job_prediction_pipeline' AIRFLOW_CTX_TASK_ID='make_predictions' AIRFLOW_CTX_EXECUTION_DATE='2025-11-27T19:51:42.147546+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-27T19:51:42.147546+00:00'
+[2025-11-27T19:51:45.382+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-27T19:51:48.232+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0001_predicted.csv
+[2025-11-27T19:51:50.506+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0002_predicted.csv
+[2025-11-27T19:51:52.643+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0004_predicted.csv
+[2025-11-27T19:51:54.776+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0005_predicted.csv
+[2025-11-27T19:51:57.799+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0006_predicted.csv
+[2025-11-27T19:52:00.406+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0007_predicted.csv
+[2025-11-27T19:52:02.954+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0008_predicted.csv
+[2025-11-27T19:52:03.628+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0010_predicted.csv
+[2025-11-27T19:52:08.083+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0012_predicted.csv
+[2025-11-27T19:52:10.968+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0014_predicted.csv
+[2025-11-27T19:52:14.303+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0017_predicted.csv
+[2025-11-27T19:52:19.691+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0018_predicted.csv
+[2025-11-27T19:52:22.801+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0019_predicted.csv
+[2025-11-27T19:52:25.056+0000] {logging_mixin.py:188} INFO - ✔ Saved prediction file: /opt/***/data/predicted_files/job_part_0020_predicted.csv
+[2025-11-27T19:52:25.059+0000] {python.py:237} INFO - Done. Returned value was: [{'file': 'job_part_0001.csv', 'status': 'ok', 'output': 'job_part_0001_predicted.csv'}, {'file': 'job_part_0002.csv', 'status': 'ok', 'output': 'job_part_0002_predicted.csv'}, {'file': 'job_part_0004.csv', 'status': 'ok', 'output': 'job_part_0004_predicted.csv'}, {'file': 'job_part_0005.csv', 'status': 'ok', 'output': 'job_part_0005_predicted.csv'}, {'file': 'job_part_0006.csv', 'status': 'ok', 'output': 'job_part_0006_predicted.csv'}, {'file': 'job_part_0007.csv', 'status': 'ok', 'output': 'job_part_0007_predicted.csv'}, {'file': 'job_part_0008.csv', 'status': 'ok', 'output': 'job_part_0008_predicted.csv'}, {'file': 'job_part_0010.csv', 'status': 'ok', 'output': 'job_part_0010_predicted.csv'}, {'file': 'job_part_0012.csv', 'status': 'ok', 'output': 'job_part_0012_predicted.csv'}, {'file': 'job_part_0014.csv', 'status': 'ok', 'output': 'job_part_0014_predicted.csv'}, {'file': 'job_part_0017.csv', 'status': 'ok', 'output': 'job_part_0017_predicted.csv'}, {'file': 'job_part_0018.csv', 'status': 'ok', 'output': 'job_part_0018_predicted.csv'}, {'file': 'job_part_0019.csv', 'status': 'ok', 'output': 'job_part_0019_predicted.csv'}, {'file': 'job_part_0020.csv', 'status': 'ok', 'output': 'job_part_0020_predicted.csv'}]
+[2025-11-27T19:52:25.060+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-27T19:52:25.095+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=job_prediction_pipeline, task_id=make_predictions, run_id=manual__2025-11-27T19:51:42.147546+00:00, execution_date=20251127T195142, start_date=20251127T195144, end_date=20251127T195225
+[2025-11-27T19:52:25.165+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-11-27T19:52:25.186+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-27T19:52:25.191+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
